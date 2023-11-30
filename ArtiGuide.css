@@ -1,0 +1,494 @@
+body {
+    margin: 0;
+    padding: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    overflow: hidden;
+    background: black;
+	height: 60px;
+ 
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.navbar a:hover {
+    background: linear-gradient(45deg, #8a2be2, #ff69b4, #00c6fb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 2.2em;
+}
+
+.Genshin {
+    position: relative;
+    height: 100vh; /* Set to the full viewport height */
+    width: 100%;
+    overflow: hidden;
+}
+
+.Genshin video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+	padding: 2;
+}
+
+.Genshin .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+
+
+.region {
+    position: relative;
+    width: 1000px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    margin: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.region img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+}
+
+.region:hover img {
+    transform: scale(1.2);
+}
+
+.region .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.region:hover .overlay {
+    opacity: 2;
+}
+
+/* Add this style to your existing CSS */
+.big-rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.character-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.character-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 5px solid transparent; /* Set initial transparent border */
+    background-clip: padding-box; /* Ensure the gradient is applied inside the border */
+    transition: border 0.5s ease-out; /* Add transition for the border effect */
+}
+
+.character-type-hydro .character-image::before {
+    border-image: linear-gradient(to right, #0074e4, #00c6fb, #8a2be2, #ff69b4);
+    border-image-slice: 1;
+}
+
+.character-element-hydro .character-image::before {
+    border-image: linear-gradient(to right, #0074e4, #00c6fb, #8a2be2, #ff69b4);
+    border-image-slice: 1;
+}
+
+.character-type-cryo .character-image::before,
+.character-element-cryo .character-image::before {
+    border-image: linear-gradient(to right, #b3e0ff, #0074e4);
+    border-image-slice: 1;
+}
+
+.character-element-electro .character-image::before,
+.character-type-electro .character-image::before {
+    border-image: linear-gradient(to right, #800080, #ff69b4, #ff00ff);
+    border-image-slice: 1;
+}
+
+.character-element-pyro .character-image::before,
+.character-type-pyro .character-image::before {
+    border-image: linear-gradient(to right, #ff4500, #ff6347, #fff);
+    border-image-slice: 1;
+}
+
+.character-element-geo .character-image::before {
+    border-image: linear-gradient(to right, #ffd700, #ffd700);
+    border-image-slice: 1;
+}
+
+.character-element-dendro .character-image::before,
+.character-Type-dendro .character-image::before {
+    border-image: linear-gradient(to right, #8b4513, #8fbc8f, #90ee90);
+    border-image-slice: 1;
+}
+
+.character-element-anemo .character-image::before {
+    border-image: linear-gradient(to right, #808080, #d3d3d3, #fff);
+    border-image-slice: 1;
+}
+
+.character-image:hover::before {
+    border: 5px solid transparent; /* Reset border on hover */
+}
+
+
+
+.character-details {
+    text-align: center;
+}
+
+.character-type-hydro {
+    background: linear-gradient(to right, #0074e4, #00c6fb, #8a2be2, #ff69b4);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 5s infinite;
+    font-size: 2rem;
+}
+
+.character-element-hydro {
+    color: #0074e4; /* Dark Blue color */
+    background: linear-gradient(to right, #0074e4, #00c6fb, #8a2be2, #ff69b4);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 1.5rem;
+}
+
+
+.character-type-cryo {
+    background: linear-gradient(to right, #b3e0ff, #0074e4);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 5s infinite;
+    font-size: 2rem;
+}
+
+.character-element-cryo {
+    background: linear-gradient(to right, #b3e0ff, #0074e4);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 5s infinite;
+    font-size: 1.5rem;
+}
+
+
+.character-element-electro {
+    color: #ff00ff; /* Fuchsia color */
+    background: linear-gradient(to right, #800080, #ff69b4, #ff00ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 1.5rem;
+}
+
+.character-type-electro {
+    color: #ff00ff; /* Fuchsia color */
+    background: linear-gradient(to right, #800080, #ff69b4, #ff00ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 2rem;
+}
+
+
+.character-element-pyro {
+    color: #ff4500; /* Scarlet Red color */
+    background: linear-gradient(to right, #ff4500, #ff6347, #fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 1.5rem;
+}
+.character-type-pyro {
+    color: #ff4500; /* Scarlet Red color */
+    background: linear-gradient(to right, #ff4500, #ff6347, #fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 2rem;
+}
+.character-element-geo {
+    color: #ffd700; /* Gold color */
+    background: linear-gradient(to right, #ffd700, #ffd700);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 1.5rem;
+}
+
+.character-element-dendro {
+    color: #8b4513; /* Saddle Brown color */
+    background: linear-gradient(to right, #8b4513, #8fbc8f, #90ee90);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 1.5rem;
+}
+
+.character-Type-dendro {
+    color: #8b4513; /* Saddle Brown color */
+    background: linear-gradient(to right, #8b4513, #8fbc8f, #90ee90);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 2rem;
+}
+
+.character-element-anemo {
+    color: #808080; /* Grey color */
+    background: linear-gradient(to right, #808080, #d3d3d3, #fff);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s infinite;
+    font-size: 1.5rem;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: -100% 50%;
+    }
+}
+
+
+.character-info p {
+    color: #000; /* Black text color */
+    font-size: 1.2rem; /* Adjust the size as needed */
+    text-align: justify; /* Justify text */
+}
+
+
+.weapon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weapon-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weapon {
+    margin: 0 10px;
+    position: relative;
+}
+
+.weapon img {
+    width: 200px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 10px;
+    transition: filter 0.5s, transform 0.5s;
+}
+
+.weapon:hover img {
+    filter: brightness(1.2);
+}
+
+.weapon[data-star="5"]:hover img {
+    border: 5px solid gold;
+}
+
+.weapon[data-star="4"]:hover img {
+    border: 5px solid purple;
+}
+
+.weapon[data-star="3"]:hover img {
+    border: 5px solid blue;
+}
+
+.weapon p {
+    transition: font-size 2.5s;
+}
+
+.weapon:hover p {
+    text-align: center;
+    background: black; /* Black background by default */
+    color:white; /* White text by default */
+    font-size: 1.5rem; /* Adjust size as needed */
+    position: relative;
+    transition: background 0.5s; /* Add transition effect */
+}
+
+
+.artifacts-info h3 {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+    background: linear-gradient(to right, purple, pink);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.artifact-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.artifact-row img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 10px;
+    transition: filter 0.5s, transform 0.5s;
+}
+
+.artifact-row img:hover {
+    filter: brightness(1.2);
+    border: 5px solid gold;
+}
+
+.artifact-row:hover p {
+    text-align: center;
+    background: black; /* Black background by default */
+    color: Gold; /* White text by default */
+    font-size: 1.5rem; /* Adjust size as needed */
+    position: relative;
+    transition: background 0.5s; /* Add transition effect */
+}
+
+.artifact-row p {
+    color: transparent; /* Make text transparent on hover */
+    background: linear-gradient(45deg, gold, yellow); /* Gradient background on hover */
+    -webkit-background-clip: text; /* Clip gradient to text */
+}
+
+.artifact-row p:hover {
+    background: rgba(0, 0, 0, 0.8); /* Black background with transparency on text hover */
+}
+
+.artifact-row h3 {
+    background: linear-gradient(to right, purple, pink, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 3s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: -100% 50%;
+    }
+}
+
+.artifact-info {
+    text-align: center;
+    background: linear-gradient(45deg, black, grey); /* Initial gradient background */
+    padding: 20px; /* Add padding for spacing */
+    width: 300px; /* Set a fixed width */
+    margin: 0 auto; /* Center the element */
+    position: relative;
+    border: 3px solid transparent; /* Set initial transparent border */
+    animation: gradientAnimation 5s infinite; /* Apply gradient animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: -100% 50%;
+    }
+}
+
+/* Adjust text color for better visibility on the initial gradient background */
+.artifact-info p {
+    color: white;
+}
+
+.char-info {
+    text-align: center;
+    background: linear-gradient(45deg, black, grey); /* Initial gradient background */
+    padding: 20px; /* Add padding for spacing */
+    width: 300px; /* Set a fixed width */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid transparent; /* Set initial transparent border */
+    animation: gradientAnimation 5s infinite; /* Apply gradient animation */
+}
+
+
+/* Adjust text color for better visibility on the initial gradient background */
+.char-info p {
+    color: white;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}

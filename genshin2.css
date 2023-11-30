@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  padding: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: black;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.navbar a:hover {
+  background: linear-gradient(45deg, #197380, #1a67a5, #3e1c7d, #791a83, #bb1b72, #f0444b);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+.menu-item .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: white;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.menu-item .submenu a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item .submenu a:hover {
+  color: white;
+}
+
+.menu-item .submenu a:hover:nth-child(1) {
+  color: lightgreen;
+}
+
+.menu-item .submenu a:hover:nth-child(2) {
+  color: yellow;
+}
+
+.menu-item .submenu a:hover:nth-child(3) {
+  color: purple;
+}
+
+.menu-item .submenu a:hover:nth-child(4) {
+  color: green;
+}
+
+.menu-item .submenu a:hover:nth-child(5) {
+  color: blue;
+}
+
+.menu-item .submenu:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #000;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-item:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+#logo {
+  border: 5px solid silver;
+  width: 15%;
+  height: 15%;
+}
+
+#artifacts-section,
+#picture-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.artifact-box {
+  border: 2px solid violet;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  transition: border-color 0.5s ease-in-out;
+}
+
+.artifact-box:hover {
+  border-color: lavender;
+}
+
+#genshin-img {
+  width: 600px;
+  height: 300px;
+  transition: transform 0.5s ease-in-out;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+#genshin-section {
+  text-align: center; /* Center the content in #thunder-section */
+}
+
+
+
+#thunder-desc,
+#thundershoot-desc {
+  border: 8px solid;
+  border-image: linear-gradient(to right, violet, lavender, pink, white);
+  border-image-slice: 1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: grey;
+  color: black;
+  display: inline-block;
+  text-align: left;
+  min-width: 200px;
+  max-width: 300px;
+  width: auto;
+}
+
+#vv-desc,
+#maiden-desc {
+  border: 8px solid;
+  border-image: linear-gradient(to right, green, light green, pink, white);
+  border-image-slice: 1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: grey;
+  color: black;
+  display: inline-block;
+  text-align: left;
+  min-width: 200px;
+  max-width: 300px;
+  width: auto;
+}

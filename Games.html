@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Genshin3.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="change.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="games.html">games</a>
+        <div class="menu-item">
+            <a href="artifacts_guide.html">Artifacts Guide</a>
+            <div class="submenu">
+                <a href="Mondstast.html">Mondstadt</a>
+                <a href="Liyue.html">Liyue</a>
+                <a href="Inazuma.html">Inazuma</a>
+                <a href="Sumeru.html">Sumeru</a>
+                <a href="Fontaine.html">Fontaine</a>
+            </div>
+        </div>
+    </div>
+    <div class="game-container">
+       <video id="gameVideo" autoplay muted loop class="background-video">
+    <source src="genshin bg.mp4" type="video/mp4" class="genshin-video active">
+    <source src="HSR.mp4" type="video/mp4" class="hsr-video">
+    <source src="Honkaibg.mp4" type="video/mp4" class="honkai-video">
+</video>
+        <img src="genshinlogo.jpeg" alt="Genshin Impact" class="game-image" id="gameImage">
+        <button id="tryGameBtn" onclick="tryGame()">
+            <img src="playbutton.jpeg" alt="Play Button" class="play-button">
+        </button>
+        <div class="arrow-container">
+            <span class="arrow" onclick="changeGame(-1)">❮</span>
+            <span class="arrow" onclick="changeGame(1)">❯</span>
+        </div>
+    </div>
+    <script src="Genshin2.js"></script>
+</body>
+
+</html>
